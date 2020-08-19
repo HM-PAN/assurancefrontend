@@ -1,0 +1,23 @@
+<h2>Employee Details</h2>
+<hr />
+<div *ngIf="employee">
+  <div>
+    <label><b>idG: </b></label> {{employee.idG}}
+  </div>
+  <div>
+    <label><b>label: </b></label> {{employee.label}}
+  </div>
+  <div>
+    <label><b>description: </b></label> {{employee.description}}
+  </div>
+  <div>
+    <label><b>obligatory: </b></label> {{employee.obligatory}}
+  </div>
+  <div>
+    <label><b>base_price:</b></label> {{employee.base_price}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Garanties List</button><br>

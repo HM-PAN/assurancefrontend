@@ -1,0 +1,36 @@
+<h3>Create Employee</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">idG</label>
+      <input type="text" class="form-control" id="idG" required [(ngModel)]="employee.idG" name="idG">
+    </div>
+
+    <div class="form-group">
+      <label for="name">label</label>
+      <input type="text" class="form-control" id="label" required [(ngModel)]="employee.label" name="label">
+    </div>
+
+    <div class="form-group">
+      <label for="name">description</label>
+      <input type="text" class="form-control" id="description" required [(ngModel)]="employee.description"
+        name="description">
+    </div>
+    <div class="form-group">
+      <label for="name">obligatory</label>
+      <input type="text" class="form-control" id="obligatory" required [(ngModel)]="employee.obligatory"
+        name="obligatory">
+    </div>
+    <div class="form-group">
+      <label for="name">base_price</label>
+      <input type="number" class="form-control" id="base_price" required [(ngModel)]="employee.base_price"
+        name="base_price">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
