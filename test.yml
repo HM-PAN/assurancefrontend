@@ -1,0 +1,28 @@
+---
+- hosts: webservers
+  become: true
+
+  tasks:
+    - name: install requirements apt
+      apt:
+        name: python-pip
+        state: latest
+    - name: install requirements pip 
+      pip:
+        name:
+          - docker
+          - requests>=2.20.1 
+    - name: log into docker hub registry
+      docker_login:
+        email: "hamza.mokhtar@sesame.com.tn"
+        username: "hamzamokhtar"
+        password: "hamza1994"
+
+    - name: ensure a container is running
+      docker_container:
+        name: angular_front_hmaz
+        state: started
+        image: "hamzamokhtar/assurancefront:latest"
+        pull: true
+        ports:
+          - "9898:4200"
